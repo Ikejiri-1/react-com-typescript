@@ -19,6 +19,8 @@ function FormComp({ setTasks }: FormCompProps) {
       onSubmit={(e) => {
         e.preventDefault();
         addTasks(task, time);
+        setTask("");
+        setTime("00:00:00");
       }}
     >
       <div className={style.inputContainer}>
