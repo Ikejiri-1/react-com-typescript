@@ -1,4 +1,4 @@
-.task-list {
+.taskList {
   grid-area: tarefas;
   height: 100%;
 
@@ -50,12 +50,12 @@
   }
 }
 
-.selected-item {
+.selectedItem {
   background-color: #292929;
   box-shadow: 2px 4px 4px #0000009f inset;
 }
 
-.completed-item {
+.completedItem {
   background-color: #566f42;
   cursor: auto;
 
