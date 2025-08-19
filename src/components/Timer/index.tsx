@@ -18,13 +18,22 @@ function Timer({ selected }: TimerProps) {
     }
   }, [selected]);
 
+  function countDown(counter: number = 0) {
+    setTimeout(() => {
+      if (counter > 0) {
+        setTime(counter - 1);
+        return countDown(counter - 1);
+      }
+    }, 1000);
+  }
+
   return (
     <div className={style.timer}>
       <p className={style.title}>Ecolha um card e inicie o cronômetro</p>
       <div className={style.clockWrapper}>
         <Clock time={time} />
       </div>
-      <Button texto="Começar" />
+      <Button texto="Começar" onClick={() => countDown(time)} />
     </div>
   );
 }

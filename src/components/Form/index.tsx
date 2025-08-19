@@ -47,7 +47,7 @@ function FormComp({ setTasks }: FormCompProps) {
           name="time"
           id="time"
           min="00:00:00"
-          max="04:00:00"
+          max="01:30:00"
           value={time}
           onChange={(e) => setTime(e.target.value)}
           required
