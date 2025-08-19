@@ -23,7 +23,7 @@ function List() {
       <h2>Estudos do dia</h2>
       <ul>
         {tasks.map((item, id) => (
-          <li key={id}>
+          <li key={id} className={style.item}>
             <h3>{item.task}</h3>
             <span>{item.time}</span>
           </li>
