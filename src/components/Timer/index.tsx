@@ -7,9 +7,10 @@ import { useState, useEffect } from "react";
 
 interface TimerProps {
   selected: ListProps | undefined;
+  finishTask: () => void;
 }
 
-function Timer({ selected }: TimerProps) {
+function Timer({ selected, finishTask }: TimerProps) {
   const [time, setTime] = useState<number>();
 
   useEffect(() => {
@@ -23,6 +24,8 @@ function Timer({ selected }: TimerProps) {
       if (counter > 0) {
         setTime(counter - 1);
         return countDown(counter - 1);
+      } else {
+        finishTask();
       }
     }, 1000);
   }
