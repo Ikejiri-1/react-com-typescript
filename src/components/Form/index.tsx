@@ -1,13 +1,17 @@
 import { useState } from "react";
 import Button from "../Button";
 import style from "./form.module.scss";
+import { ListProps } from "../../types/tasks";
 
-function FormComp() {
+interface FormCompProps {
+  setTasks: React.Dispatch<React.SetStateAction<ListProps[]>>;
+}
+function FormComp({ setTasks }: FormCompProps) {
   const [task, setTask] = useState("");
   const [time, setTime] = useState("00:00:00");
 
   function addTasks(task: string, time: string) {
-    console.log(task, time);
+    setTasks((oldTasks) => [...oldTasks, { task, time }]);
   }
   return (
     <form

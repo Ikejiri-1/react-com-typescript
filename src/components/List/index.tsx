@@ -1,31 +1,11 @@
-import { useState } from "react";
 import Item from "./item";
 import style from "./list.module.scss";
-function List() {
-  const [tasks, setTasks] = useState([
-    {
-      task: "React",
-      time: "02:00:00",
-    },
-    {
-      task: "JavaScript",
-      time: "01:00:00",
-    },
-    {
-      task: "TypeScript",
-      time: "03:00:00",
-    },
-  ]);
+import { ListProps } from "../../types/tasks";
+
+function List({ tasks }: { tasks: ListProps[] }) {
   return (
     <aside className={style.taskList}>
-      <h2
-        onClick={() => {
-          setTasks([...tasks, { task: "back-end", time: "04:00:00" }]);
-          return { ...tasks };
-        }}
-      >
-        Estudos do dia
-      </h2>
+      <h2>Estudos do dia</h2>
       <ul>
         {tasks.map((item, index) => (
           <Item key={index} {...item} />
