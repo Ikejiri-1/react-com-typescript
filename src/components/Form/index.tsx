@@ -11,7 +11,10 @@ function FormComp({ setTasks }: FormCompProps) {
   const [time, setTime] = useState("00:00:00");
 
   function addTasks(task: string, time: string) {
-    setTasks((oldTasks) => [...oldTasks, { task, time }]);
+    setTasks((oldTasks) => [
+      ...oldTasks,
+      { task, time, selected: false, completed: false },
+    ]);
   }
   return (
     <form
