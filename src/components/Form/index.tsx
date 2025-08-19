@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../Button";
 import style from "./form.module.scss";
 import { ListProps } from "../../types/tasks";
+import { v4 as uuidv4 } from "uuid";
 
 interface FormCompProps {
   setTasks: React.Dispatch<React.SetStateAction<ListProps[]>>;
@@ -13,7 +14,7 @@ function FormComp({ setTasks }: FormCompProps) {
   function addTasks(task: string, time: string) {
     setTasks((oldTasks) => [
       ...oldTasks,
-      { task, time, selected: false, completed: false },
+      { task, time, selected: false, completed: false, id: uuidv4() },
     ]);
   }
   return (

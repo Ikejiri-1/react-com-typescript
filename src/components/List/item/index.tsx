@@ -1,11 +1,8 @@
+import { ListProps } from "../../../types/tasks";
 import style from "../list.module.scss";
 
-interface ItemProps {
-  task: string;
-  time: string;
-}
-
-function Item({ task, time }: ItemProps) {
+function Item({ task, time, selected, completed, id }: ListProps) {
+  console.log("item atual: ", { task, time, selected, completed, id });
   return (
     <li className={style.item}>
       <h3>{task}</h3>
